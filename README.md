@@ -11,7 +11,7 @@ Task samples from http://softlib.rice.edu/pub/tsplib/
 
 # Run
 Single task:
-<br>build/tsp <task_file> <initial_solution_file>
+<br>build/tsp <task_file>
 
 All tasks:
 <br>./run_tasks.sh
