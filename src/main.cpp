@@ -4,17 +4,16 @@
 #include <vector>
 #include <cmath>
 #include <chrono>
-#include <algorithm>
 #include <random>
 
 const double INF = 999999;
 
 const size_t ITERATIONS = 100;
-const double Q = 2.5;
-const double P = 0.9;
-const double PHEROMONE_AMOUNT = 100.0;
-const double PHEROMONE_VAPORIZATION = 0.15;
-const double PHEROMONE_INITIAL = 50.0;
+const double Q = 2.5; // level of "greedy"
+const double P = 0.9; // level of "herdness"
+const double PHEROMONE_AMOUNT = 100.0; // pheromone amount coefficient secreted by each ant
+const double PHEROMONE_VAPORIZATION = 0.15; // speed of pheromone evaporation
+const double PHEROMONE_INITIAL = 50.0; // initial amount of pheromone on each transition
 
 enum class TYPE { NONE = -1, TSP, ATSP };
 enum class EDGE_WEIGHT_TYPE { NONE = -1, EXPLICIT, EUC_2D, ATT };
@@ -418,7 +417,6 @@ int main(int argc, char** argv)
     std::cout << "Name: " << a.getName() << std::endl;
     std::cout << "Description: " << a.getDescription() << std::endl;
     std::cout << "Size: " << a.getSize() << std::endl;
-    //a.showMatrix();
 
     a.solve();
 
